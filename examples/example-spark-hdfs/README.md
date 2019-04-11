@@ -43,8 +43,15 @@ and then run spark-submit:
 
     spark-submit --class com.datawizards.spark.SparkWithHDFSExample --master yarn /opt/transformations/example-spark-hdfs-1.0-SNAPSHOT.jar
     
+### Got the error that the file is not exist in docker container
+
+```
+docker cp example-spark-hdfs-1.0-SNAPSHOT.jar spark:/opt/transformations
+```   
+
 ### Verify that data is saved
 
 List files in HDFS directory from host system:
 
     docker container exec -it namenode hadoop fs -ls /data/test
+
